@@ -1,0 +1,16 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		
+		<Label class="title">Fotos</Label>
+		<Label id="topLabel">Utiliza la mejor foto que tengas!</Label>
+					
+		<ImageView id="imageView">
+		
+		<Button id="selectPhoto" class="button" onClick="selectPhoto">Seleccionar de Biblioteca</Button>
+		<Button id="takePhoto" class="button" onClick="takePhoto">Tomar foto</Button>	
+		
+		<Button id="continuar" class="button" onClick="goToNext">Continuar</Button>
+		<Button class="" id="showButtons" onClick="showButtons">Ver Botones</Button>	
+	
+	</Window>
+</Alloy>

@@ -1,0 +1,8 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<Label class="title">Form</Label>
+		<Label>Cuale era tu nombre?</Label>		
+	    <TextField id="textField" />
+		<Button class="button" onClick="validate">Validar</Button>
+	</Window>
+</Alloy>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="select_photo">Select other photo</string>
+	<string name="take_other_photo">Take other photo</string>
+	<string name="nice_picture">Nice picture!</string>
+	<string name="continue">Continue</string>
+</resources>

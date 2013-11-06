@@ -1,0 +1,36 @@
+/**
+ * Appcelerator Titanium
+ * this is a generated file - DO NOT EDIT
+ */
+
+"indexTitle" = "Index";
+"indexLabel1" = "Welcome to test app";
+"indexLabel2" = "Click on continue button to advance";
+"continueLabel" = "Continue";
+"photoTitle" = "Photos";
+"photoLabel1" = "Use your best photo!";
+"selectPhoto" = "Select from library";
+"takePhoto" = "Take a Picture";
+"selectOtherPhoto" = "Select other";
+"takeOtherPhoto" = "Take other";
+"nicePicture" = "Nice picture!";
+"gpsTitle" = "GPS";
+"gpsLabel1" = "Are you from here?";
+"gpsLabel2" = "Are ou in this city?";
+"gpsContinue" = "I'm here!!!";
+"recordTitle" = "Record";
+"recordLabel1" = "When I saw you, you were singing";
+"recordLabel2" = "Can I hear your voice?";
+"recordLabel3" = "Record Voice";
+"recordButton" = "R";
+"playTitle" = "Play";
+"playLabel1" = "I'm not sure if are you";
+"playLabel2" = "Let me hear you again";
+"playLabel3" = "Play voice";
+"playButton" = ">";
+"endRecording" = "End of Recording";
+"formTitle" = "form";
+"whatsYourName" = "What's your name?";
+"validate" = "Validate";
+"validateError" = "Complete field";
+"endTitle" = "Welcome!!!!";

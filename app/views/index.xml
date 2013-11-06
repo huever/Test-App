@@ -1,10 +1,11 @@
 <Alloy>
-	<Window class="container" layout="vertical">		
-		<Label class="title">Inicio</Label>
-		<Label id="topLabel">Bienvenido a la aplicación de pruebas</Label>
-		<Label>Haga click en iniciar para comenzar</Label>
-		<ImageView id="imageView">
+	<Window class="container" layout="vertical">	
 			
-		<Button class="button" onClick="goToNext">Continuar</Button>	
+		<Label id="indexLabel1"></Label>
+		<Label id="indexLabel2"></Label>
+		
+		<ImageView id="imageView">			
+		<Button class="button" id="continueLabel" onClick="goToNext"></Button>	
+		
 	</Window>
 </Alloy>

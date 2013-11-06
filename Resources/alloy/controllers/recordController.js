@@ -1,7 +1,22 @@
 function Controller() {
-    function goToNext() {
-        var playController = Alloy.createController("playController");
-        playController.getView().open();
+    function record() {
+        $.recordButton.hide();
+        $.recordButton.height = 0;
+        $.stopButton.show();
+        $.stopButton.height = 80;
+        recording.start();
+    }
+    function stopRecording() {
+        file = recording.stop();
+        goToNext(file);
+    }
+    function goToNext(file) {
+        var playController = Alloy.createController("playController", {
+            file: file
+        });
+        playController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "recordController";
@@ -13,57 +28,69 @@ function Controller() {
     var __defers = {};
     $.__views.recordController = Ti.UI.createWindow({
         backgroundColor: "white",
+        backgroundImage: "/images/eq.png",
         layout: "vertical",
         id: "recordController"
     });
     $.__views.recordController && $.addTopLevelView($.__views.recordController);
-    $.__views.__alloyId16 = Ti.UI.createLabel({
+    $.__views.recordTitle = Ti.UI.createLabel({
         top: 25,
         color: "black",
-        text: "Grabar",
-        id: "__alloyId16"
+        text: L("recordTitle"),
+        id: "recordTitle"
     });
-    $.__views.recordController.add($.__views.__alloyId16);
-    $.__views.topLabel = Ti.UI.createLabel({
-        top: 20,
-        text: "Cuando te vi estabas cantando",
-        id: "topLabel"
+    $.__views.recordController.add($.__views.recordTitle);
+    $.__views.recordLabel1 = Ti.UI.createLabel({
+        text: L("recordLabel1"),
+        color: "white",
+        id: "recordLabel1"
     });
-    $.__views.recordController.add($.__views.topLabel);
-    $.__views.__alloyId17 = Ti.UI.createLabel({
-        text: "Puedo escuchar tu voz?",
-        id: "__alloyId17"
+    $.__views.recordController.add($.__views.recordLabel1);
+    $.__views.recordLabel2 = Ti.UI.createLabel({
+        text: L("recordLabel2"),
+        color: "white",
+        id: "recordLabel2"
     });
-    $.__views.recordController.add($.__views.__alloyId17);
-    $.__views.__alloyId18 = Ti.UI.createButton({
-        width: 40,
-        height: 40,
+    $.__views.recordController.add($.__views.recordLabel2);
+    $.__views.recordButton = Ti.UI.createButton({
+        width: 80,
+        height: 80,
         backgroundColor: "red",
-        borderRadius: 10,
-        id: "__alloyId18"
+        borderRadius: 40,
+        top: 30,
+        id: "recordButton"
     });
-    $.__views.recordController.add($.__views.__alloyId18);
-    $.__views.__alloyId19 = Ti.UI.createLabel({
-        text: "Grabar voz",
-        id: "__alloyId19"
+    $.__views.recordController.add($.__views.recordButton);
+    record ? $.__views.recordButton.addEventListener("click", record) : __defers["$.__views.recordButton!click!record"] = true;
+    $.__views.stopButton = Ti.UI.createButton({
+        width: 80,
+        height: 80,
+        backgroundColor: "red",
+        borderRadius: 0,
+        top: 30,
+        id: "stopButton"
     });
-    $.__views.recordController.add($.__views.__alloyId19);
-    $.__views.__alloyId20 = Ti.UI.createButton({
-        width: 200,
-        height: 35,
-        backgroundColor: "#b0e88d",
-        borderRadius: 10,
-        borderColor: "#a5d686",
-        top: 10,
-        color: "black",
-        title: "Continuar",
-        id: "__alloyId20"
+    $.__views.recordController.add($.__views.stopButton);
+    stopRecording ? $.__views.stopButton.addEventListener("click", stopRecording) : __defers["$.__views.stopButton!click!stopRecording"] = true;
+    $.__views.recordLabel3 = Ti.UI.createLabel({
+        text: L("recordLabel3"),
+        color: "white",
+        id: "recordLabel3"
     });
-    $.__views.recordController.add($.__views.__alloyId20);
-    goToNext ? $.__views.__alloyId20.addEventListener("click", goToNext) : __defers["$.__views.__alloyId20!click!goToNext"] = true;
+    $.__views.recordController.add($.__views.recordLabel3);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId20!click!goToNext"] && $.__views.__alloyId20.addEventListener("click", goToNext);
+    var file;
+    $.stopButton.hide();
+    $.stopButton.height = 0;
+    Titanium.Media.audioSessionMode;
+    Titanium.Media.audioSessionMode = Ti.Media.AUDIO_SESSION_MODE_PLAY_AND_RECORD;
+    Titanium.Media.audioLineType = Ti.Media.AUDIO_SPEAKER;
+    var recording = Ti.Media.createAudioRecorder();
+    recording.compression = Ti.Media.AUDIO_FORMAT_ULAW;
+    recording.format = Ti.Media.AUDIO_FILEFORMAT_WAVE;
+    __defers["$.__views.recordButton!click!record"] && $.__views.recordButton.addEventListener("click", record);
+    __defers["$.__views.stopButton!click!stopRecording"] && $.__views.stopButton.addEventListener("click", stopRecording);
     _.extend($, exports);
 }
 

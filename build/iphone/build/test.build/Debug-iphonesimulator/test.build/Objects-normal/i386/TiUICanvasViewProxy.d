@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/gl/Documents/Titanium_Studio_Workspace/test/build/iphone/Classes/TiUICanvasViewProxy.m
+  /Users/gl/Documents/Titanium_Studio_Workspace/Test-App/build/iphone/Classes/TiUICanvasViewProxy.m

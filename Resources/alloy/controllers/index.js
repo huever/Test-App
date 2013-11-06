@@ -1,7 +1,9 @@
 function Controller() {
     function goToNext() {
         var photoController = Alloy.createController("photoController");
-        photoController.getView().open();
+        photoController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -13,53 +15,45 @@ function Controller() {
     var __defers = {};
     $.__views.index = Ti.UI.createWindow({
         backgroundColor: "white",
+        backgroundImage: "/images/index.png",
         layout: "vertical",
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);
-    $.__views.__alloyId7 = Ti.UI.createLabel({
-        top: 25,
-        color: "black",
-        text: "Inicio",
-        id: "__alloyId7"
+    $.__views.indexLabel1 = Ti.UI.createLabel({
+        text: L("indexLabel1"),
+        top: 30,
+        id: "indexLabel1"
     });
-    $.__views.index.add($.__views.__alloyId7);
-    $.__views.topLabel = Ti.UI.createLabel({
-        top: 20,
-        text: "Bienvenido a la aplicación de pruebas",
-        id: "topLabel"
+    $.__views.index.add($.__views.indexLabel1);
+    $.__views.indexLabel2 = Ti.UI.createLabel({
+        text: L("indexLabel2"),
+        id: "indexLabel2"
     });
-    $.__views.index.add($.__views.topLabel);
-    $.__views.__alloyId8 = Ti.UI.createLabel({
-        text: "Haga click en iniciar para comenzar",
-        id: "__alloyId8"
-    });
-    $.__views.index.add($.__views.__alloyId8);
+    $.__views.index.add($.__views.indexLabel2);
     $.__views.imageView = Ti.UI.createImageView({
-        image: "/images/apple_logo.jpg",
-        width: 150,
-        height: 150,
-        top: 100,
+        image: "/images/logo.png",
+        top: 50,
         id: "imageView"
     });
     $.__views.index.add($.__views.imageView);
-    $.__views.__alloyId9 = Ti.UI.createButton({
-        width: 200,
-        height: 35,
+    $.__views.continueLabel = Ti.UI.createButton({
+        width: 190,
+        height: 40,
         backgroundColor: "#b0e88d",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
         color: "black",
-        title: "Continuar",
-        id: "__alloyId9"
+        title: L("continueLabel"),
+        id: "continueLabel"
     });
-    $.__views.index.add($.__views.__alloyId9);
-    goToNext ? $.__views.__alloyId9.addEventListener("click", goToNext) : __defers["$.__views.__alloyId9!click!goToNext"] = true;
+    $.__views.index.add($.__views.continueLabel);
+    goToNext ? $.__views.continueLabel.addEventListener("click", goToNext) : __defers["$.__views.continueLabel!click!goToNext"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.index.open();
-    __defers["$.__views.__alloyId9!click!goToNext"] && $.__views.__alloyId9.addEventListener("click", goToNext);
+    __defers["$.__views.continueLabel!click!goToNext"] && $.__views.continueLabel.addEventListener("click", goToNext);
     _.extend($, exports);
 }
 

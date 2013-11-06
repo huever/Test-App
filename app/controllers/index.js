@@ -1,6 +1,6 @@
 function goToNext(e) {
 	var photoController = Alloy.createController('photoController');
-	if (Ti.Platform.osname == 'iphone') {
+	if (OS_IOS) {
 		photoController.getView().open({
 			transition : Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 		});

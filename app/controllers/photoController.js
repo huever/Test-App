@@ -1,18 +1,46 @@
 $.imageView.hide();
 $.imageView.height = 0;
-$.continuar.hide();
+$.continueLabel.hide();
 
 function selectPhoto() {
-	alert("selecciona");
+	Titanium.Media.openPhotoGallery({
+		success : function(event) {
+			var image = event.media;
+
+			if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+				$.imageView.image = image;
+			}
+			showButtons();
+		},
+		cancel : function() {
+
+		},
+		error : function(error) {
+		}
+	});
 }
 
 function takePhoto() {
-	alert("sacar foto");
+	Titanium.Media.showCamera({
+		success : function(event) {
+			var image = event.media;
+
+			if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+				$.imageView.image = image;
+			}			
+			showButtons();
+		},
+		cancel : function() {
+
+		},
+		error : function(error) {
+		}
+	});
 }
 
 function goToNext() {
 	var gpsController = Alloy.createController('gpsController');
-	if (Ti.Platform.osname == 'iphone') {
+	if (OS_IOS) {
 		gpsController.getView().open({
 			transition : Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 		});
@@ -22,12 +50,10 @@ function goToNext() {
 }
 
 function showButtons() {
-	$.selectPhoto.title = L("select_photo");
-	$.takePhoto.title = L("take_other_photo");
-	$.imageView.height = 150;
+	$.selectPhoto.title = L("selectOtherPhoto");
+	$.takePhoto.title = L("takeOtherPhoto");
+	$.imageView.height = 200;
 	$.imageView.show();
-	$.continuar.show();
-	$.topLabel.text = L("nice_picture");
-	//Internacionalizar
-	$.showButtons.hide();
+	$.continueLabel.show();
+	$.photoLabel1.text = L("nicePicture");
 }

@@ -1,8 +1,8 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<Label class="title">Form</Label>
-		<Label>Cuale era tu nombre?</Label>		
+		<Label class="title" id="formTitle"></Label>
+		<Label id="whatsYourName"></Label>		
 	    <TextField id="textField" />
-		<Button class="button" onClick="validate">Validar</Button>
+		<Button class="button" id="validate" onClick="validate"></Button>
 	</Window>
 </Alloy>

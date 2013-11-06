@@ -1,10 +1,24 @@
-"Window": {
-	backgroundColor: "white"
+".container": {
+	backgroundImage: "/images/camera.png"
+}
+"#imageView":{
+	top:10
 }
 
-"#imageView":{
-	image:"/images/apple_logo.jpg",
-	width:150,
-	height:150,
-	top:10
+"#photoTitle": {
+	text: L("photoTitle"),
+	color: "white"
+}
+"#photoLabel1": {
+	text: L("photoLabel1"),
+	color: "white"
+}
+"#selectPhoto": {
+	title: L("selectPhoto")
+}
+"#takePhoto": {
+	title: L("takePhoto")
+}
+"#continueLabel": {
+	title: L("continueLabel")
 }

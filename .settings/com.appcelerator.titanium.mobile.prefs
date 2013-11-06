@@ -1,0 +1,16 @@
+android/ATTR_PROJECT_NAME=Test-App
+android/abi=armeabi
+android/distribute_path=
+android/keystore_alias=
+android/keystore_password=
+android/keystore_path=
+android/recent_output=
+android/sdk_version=Google APIs (Android 2.3.3)
+eclipse.preferences.version=1
+iosLaunchConfigurationAttributes/ATTR_MINIFY=true
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=Test-App
+iosLaunchConfigurationAttributes/appid=com.test.com
+iosLaunchConfigurationAttributes/certificate=Damian Ferrai (X55HKQ3ST2)
+iosLaunchConfigurationAttributes/keychain=
+iosLaunchConfigurationAttributes/sdk_version=7.0
+iosLaunchConfigurationAttributes/uuid=74E42571-9313-4F93-B9C2-038DC29D5B9C

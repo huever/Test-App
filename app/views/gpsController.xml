@@ -1,9 +1,9 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<Label class="title">GPS</Label>
-		<Label id="topLabel">Me pareció verte por acá</Label>
-		<Label>¿Estas en ciudad?</Label>				
+		<Label class="title" id="gpsTitle"></Label>
+		<Label id="gpsLabel1"></Label>
+		<Label id="gpsLabel2"></Label>				
 	
-		<Button class="button" onClick="goToNext">Ahí estoy!!!</Button>
+		<Button class="button" id="gpsContinue" onClick="goToNext"></Button>
 	</Window>
 </Alloy>

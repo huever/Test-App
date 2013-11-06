@@ -1,6 +1,35 @@
-".play": {
-	width: 40,
-	height: 40,
-	backgroundColor: "green",
-	borderRadius: 10
+".container": {
+	backgroundImage: "/images/eq.png"
 }
+".play": {
+	width: 80,
+	height: 80,
+	backgroundColor: "blue",
+	borderRadius: 40,
+	top: 30,
+	color: "white",
+}
+
+"#playTitle": {
+	text: L("playTitle"),
+	color: "white"
+}
+"#playLabel1": {
+	text: L("playLabel1"),
+	color: "white"
+}
+"#playLabel2": {
+	text: L("playLabel2"),
+	color: "white"
+}
+"#playLabel3": {
+	text: L("playLabel3"),
+	color: "white"
+}
+"#playButton": {
+	title: L("playButton")
+}
+"#continueLabel": {
+	title: L("continueLabel")
+}
+

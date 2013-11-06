@@ -1,1 +1,1 @@
-/Users/gl/Documents/Titanium_Studio_Workspace/test/Resources/alloy/controllers/gpsController.js
+/Users/gl/Documents/Titanium_Studio_Workspace/Test-App/Resources/alloy/controllers/gpsController.js

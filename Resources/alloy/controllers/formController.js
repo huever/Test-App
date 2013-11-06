@@ -16,18 +16,18 @@ function Controller() {
         id: "formController"
     });
     $.__views.formController && $.addTopLevelView($.__views.formController);
-    $.__views.__alloyId0 = Ti.UI.createLabel({
+    $.__views.formTitle = Ti.UI.createLabel({
         top: 25,
         color: "black",
-        text: "Form",
-        id: "__alloyId0"
+        text: L("formTitle"),
+        id: "formTitle"
     });
-    $.__views.formController.add($.__views.__alloyId0);
-    $.__views.__alloyId1 = Ti.UI.createLabel({
-        text: "Cuale era tu nombre?",
-        id: "__alloyId1"
+    $.__views.formController.add($.__views.formTitle);
+    $.__views.whatsYourName = Ti.UI.createLabel({
+        text: L("whatsYourName"),
+        id: "whatsYourName"
     });
-    $.__views.formController.add($.__views.__alloyId1);
+    $.__views.formController.add($.__views.whatsYourName);
     $.__views.textField = Ti.UI.createTextField({
         borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
         color: "#336699",
@@ -36,22 +36,22 @@ function Controller() {
         id: "textField"
     });
     $.__views.formController.add($.__views.textField);
-    $.__views.__alloyId2 = Ti.UI.createButton({
-        width: 200,
-        height: 35,
+    $.__views.validate = Ti.UI.createButton({
+        width: 190,
+        height: 40,
         backgroundColor: "#b0e88d",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
         color: "black",
-        title: "Validar",
-        id: "__alloyId2"
+        title: L("validate"),
+        id: "validate"
     });
-    $.__views.formController.add($.__views.__alloyId2);
-    validate ? $.__views.__alloyId2.addEventListener("click", validate) : __defers["$.__views.__alloyId2!click!validate"] = true;
+    $.__views.formController.add($.__views.validate);
+    validate ? $.__views.validate.addEventListener("click", validate) : __defers["$.__views.validate!click!validate"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId2!click!validate"] && $.__views.__alloyId2.addEventListener("click", validate);
+    __defers["$.__views.validate!click!validate"] && $.__views.validate.addEventListener("click", validate);
     _.extend($, exports);
 }
 

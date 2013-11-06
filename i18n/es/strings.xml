@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<string name="select_photo">Seleccionar otra foto</string>
-	<string name="take_other_photo">Tomar otra foto</string>
-	<string name="nice_picture">Que buena foto!</string>
-	<string name="continue">Continuar</string>
+	<string name="indexTitle">Inicio</string>
+	<string name="indexLabel1">Bienvenido a la aplicación de pruebas</string>
+	<string name="indexLabel2">Haga click en iniciar para comenzar</string>
+	<string name="continueLabel">Continuar</string>
+	
+	<string name="photoTitle">Fotos</string>
+	<string name="photoLabel1">Utiliza la mejor foto que tengas!</string>	
+	<string name="selectPhoto">Seleccionar de la Biblioteca</string>
+	<string name="takePhoto">Tomar foto</string>
+	<string name="selectOtherPhoto">Seleccionar otra foto</string>
+	<string name="takeOtherPhoto">Tomar otra foto</string>	
+	<string name="nicePicture">Que buena foto!</string>
+	
+	<string name="gpsTitle">GPS</string>
+	<string name="gpsLabel1">Me pareció verte por acá</string>
+	<string name="gpsLabel2">¿Estas en ciudad?</string>
+	<string name="gpsContinue">Ahí estoy!!!</string>
+	
+	<string name="recordTitle">Grabar</string>
+	<string name="recordLabel1">Cuando te vi estabas cantando</string>
+	<string name="recordLabel2">Puedo escuchar tu voz?</string>
+	<string name="recordLabel3">Grabar voz</string>
+	<string name="recordButton">R</string>
+	
+	<string name="playTitle">Reproducir</string>
+	<string name="playLabel1">No estoy seguro que seas vos</string>
+	<string name="playLabel2">Dejame escuchar de nuevo</string>
+	<string name="playLabel3">Reproducir voz</string>
+	<string name="playButton">P</string>	
+	<string name="endRecording">Fin de la grabación</string>	
+	
+	<string name="formTitle">Formulario</string>
+	<string name="whatsYourName">Cual es tu nombre?</string>	
+	<string name="validate">Validar</string>
+	<string name="validateError">Complete el campo</string>	
+	
+	<string name="endTitle">Welcome!!!!</string>	
 </resources>

@@ -1,1 +1,1 @@
-/Users/gl/Documents/Titanium_Studio_Workspace/test/Resources/alloy/controllers/formController.js
+/Users/gl/Documents/Titanium_Studio_Workspace/Test-App/Resources/alloy/controllers/formController.js

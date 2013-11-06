@@ -1,6 +1,25 @@
+".container": {
+	backgroundImage: "/images/index.png"
+}
+
 "#imageView":{
-	image:"/images/apple_logo.jpg",
-	width:150,
-	height:150,
-	top:100
+	image:"/images/logo.png",
+	top:50
+}
+
+"#indexTitle": {
+	text: L("indexTitle")
+}
+
+"#indexLabel1": {
+	text: L("indexLabel1"),
+	top: 30
+}
+
+"#indexLabel2": {
+	text: L("indexLabel2")
+}
+
+"#continueLabel": {
+	title: L("continueLabel")
 }

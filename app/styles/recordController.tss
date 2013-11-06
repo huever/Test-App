@@ -1,6 +1,37 @@
+".container": {
+	backgroundImage: "/images/eq.png"
+}
 ".record": {
-	width: 40,
-	height: 40,
+	width: 80,
+	height: 80,
 	backgroundColor: "red",
-	borderRadius: 10
+	borderRadius: 40,
+	top: 30
+}
+
+".stop": {
+	width: 80,
+	height: 80,
+	backgroundColor: "red",
+	borderRadius: 0,
+	top: 30
+}
+
+"#recordTitle": {
+	text: L("recordTitle")
+}
+"#recordLabel1": {
+	text: L("recordLabel1"),
+	color: "white"
+}
+"#recordLabel2": {
+	text: L("recordLabel2"),
+	color: "white"
+}
+"#recordLabel3": {
+	text: L("recordLabel3"),
+	color: "white"
+}
+"#continueLabel": {
+	title: L("continueLabel")
 }

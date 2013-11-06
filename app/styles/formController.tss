@@ -1,0 +1,12 @@
+"#whatsYourName": {
+	text: L("whatsYourName")
+}
+"#validate": {
+	title: L("validate")
+}
+"#formTitle": {
+	text: L("formTitle")
+}
+"#validateError": {
+	text: L("validateError")
+}

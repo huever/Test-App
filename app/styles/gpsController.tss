@@ -1,4 +1,18 @@
-
-".container" : {
-  
+".container": {
+	backgroundImage: "/images/map.png"
+}
+"#gpsTitle": {
+	text: L("gpsTitle"),
+	color: "white"
+}
+"#gpsLabel1": {
+	text: L("gpsLabel1"),
+	color: "white"
+}
+"#gpsLabel2": {
+	text: L("gpsLabel2"),
+	color: "white"
+}
+"#gpsContinue": {
+	title: L("gpsContinue")
 }

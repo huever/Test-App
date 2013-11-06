@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<string name="select_photo">Select other photo</string>
-	<string name="take_other_photo">Take other photo</string>
-	<string name="nice_picture">Nice picture!</string>
-	<string name="continue">Continue</string>
+	<string name="indexTitle">Index</string>
+	<string name="indexLabel1">Welcome to test app</string>
+	<string name="indexLabel2">Click on continue button to advance</string>
+	<string name="continueLabel">Continue</string>
+	
+	<string name="photoTitle">Photos</string>
+	<string name="photoLabel1">Use your best photo!</string>	
+	<string name="selectPhoto">Select from library</string>
+	<string name="takePhoto">Take a Picture</string>
+	<string name="selectOtherPhoto">Select other</string>
+	<string name="takeOtherPhoto">Take other</string>	
+	<string name="nicePicture">Nice picture!</string>
+	
+	<string name="gpsTitle">GPS</string>
+	<string name="gpsLabel1">Are you from here?</string>
+	<string name="gpsLabel2">Are ou in this city?</string>
+	<string name="gpsContinue">I'm here!!!</string>
+	
+	<string name="recordTitle">Record</string>
+	<string name="recordLabel1">When I saw you, you were singing</string>
+	<string name="recordLabel2">Can I hear your voice?</string>
+	<string name="recordLabel3">Record Voice</string>
+	<string name="recordButton">R</string>
+	
+	<string name="playTitle">Play</string>
+	<string name="playLabel1">I'm not sure if are you</string>
+	<string name="playLabel2">Let me hear you again</string>
+	<string name="playLabel3">Play voice</string>
+	<string name="playButton">></string>	
+	<string name="endRecording">End of Recording</string>	
+	
+	<string name="formTitle">form</string>
+	<string name="whatsYourName">What's your name?</string>	
+	<string name="validate">Validate</string>
+	<string name="validateError">Complete field</string>	
+	
+	<string name="endTitle">Welcome!!!!</string>	
 </resources>

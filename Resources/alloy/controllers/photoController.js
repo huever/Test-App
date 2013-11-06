@@ -1,22 +1,39 @@
 function Controller() {
     function selectPhoto() {
-        alert("selecciona");
+        Titanium.Media.openPhotoGallery({
+            success: function(event) {
+                var image = event.media;
+                event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO && ($.imageView.image = image);
+                showButtons();
+            },
+            cancel: function() {},
+            error: function() {}
+        });
     }
     function takePhoto() {
-        alert("sacar foto");
+        Titanium.Media.showCamera({
+            success: function(event) {
+                var image = event.media;
+                event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO && ($.imageView.image = image);
+                showButtons();
+            },
+            cancel: function() {},
+            error: function() {}
+        });
     }
     function goToNext() {
         var gpsController = Alloy.createController("gpsController");
-        gpsController.getView().open();
+        gpsController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     function showButtons() {
-        $.selectPhoto.title = L("select_photo");
-        $.takePhoto.title = L("take_other_photo");
-        $.imageView.height = 150;
+        $.selectPhoto.title = L("selectOtherPhoto");
+        $.takePhoto.title = L("takeOtherPhoto");
+        $.imageView.height = 200;
         $.imageView.show();
-        $.continuar.show();
-        $.topLabel.text = L("nice_picture");
-        $.showButtons.hide();
+        $.continueLabel.show();
+        $.photoLabel1.text = L("nicePicture");
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "photoController";
@@ -28,85 +45,76 @@ function Controller() {
     var __defers = {};
     $.__views.photoController = Ti.UI.createWindow({
         backgroundColor: "white",
+        backgroundImage: "/images/camera.png",
         layout: "vertical",
         id: "photoController"
     });
     $.__views.photoController && $.addTopLevelView($.__views.photoController);
-    $.__views.__alloyId10 = Ti.UI.createLabel({
+    $.__views.photoTitle = Ti.UI.createLabel({
         top: 25,
         color: "black",
-        text: "Fotos",
-        id: "__alloyId10"
+        text: L("photoTitle"),
+        id: "photoTitle"
     });
-    $.__views.photoController.add($.__views.__alloyId10);
-    $.__views.topLabel = Ti.UI.createLabel({
-        top: 20,
-        text: "Utiliza la mejor foto que tengas!",
-        id: "topLabel"
+    $.__views.photoController.add($.__views.photoTitle);
+    $.__views.photoLabel1 = Ti.UI.createLabel({
+        text: L("photoLabel1"),
+        color: "White",
+        id: "photoLabel1"
     });
-    $.__views.photoController.add($.__views.topLabel);
+    $.__views.photoController.add($.__views.photoLabel1);
     $.__views.imageView = Ti.UI.createImageView({
-        image: "/images/apple_logo.jpg",
-        width: 150,
-        height: 150,
         top: 10,
         id: "imageView"
     });
     $.__views.photoController.add($.__views.imageView);
     $.__views.selectPhoto = Ti.UI.createButton({
-        width: 200,
-        height: 35,
+        width: 190,
+        height: 40,
         backgroundColor: "#b0e88d",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
         color: "black",
-        title: "Seleccionar de Biblioteca",
+        title: L("selectPhoto"),
         id: "selectPhoto"
     });
     $.__views.photoController.add($.__views.selectPhoto);
     selectPhoto ? $.__views.selectPhoto.addEventListener("click", selectPhoto) : __defers["$.__views.selectPhoto!click!selectPhoto"] = true;
     $.__views.takePhoto = Ti.UI.createButton({
-        width: 200,
-        height: 35,
+        width: 190,
+        height: 40,
         backgroundColor: "#b0e88d",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
         color: "black",
-        title: "Tomar foto",
+        title: L("takePhoto"),
         id: "takePhoto"
     });
     $.__views.photoController.add($.__views.takePhoto);
     takePhoto ? $.__views.takePhoto.addEventListener("click", takePhoto) : __defers["$.__views.takePhoto!click!takePhoto"] = true;
-    $.__views.continuar = Ti.UI.createButton({
-        width: 200,
-        height: 35,
+    $.__views.continueLabel = Ti.UI.createButton({
+        width: 190,
+        height: 40,
         backgroundColor: "#b0e88d",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
         color: "black",
-        title: "Continuar",
-        id: "continuar"
+        title: L("continueLabel"),
+        id: "continueLabel"
     });
-    $.__views.photoController.add($.__views.continuar);
-    goToNext ? $.__views.continuar.addEventListener("click", goToNext) : __defers["$.__views.continuar!click!goToNext"] = true;
-    $.__views.showButtons = Ti.UI.createButton({
-        title: "Ver Botones",
-        id: "showButtons"
-    });
-    $.__views.photoController.add($.__views.showButtons);
-    showButtons ? $.__views.showButtons.addEventListener("click", showButtons) : __defers["$.__views.showButtons!click!showButtons"] = true;
+    $.__views.photoController.add($.__views.continueLabel);
+    goToNext ? $.__views.continueLabel.addEventListener("click", goToNext) : __defers["$.__views.continueLabel!click!goToNext"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.imageView.hide();
     $.imageView.height = 0;
-    $.continuar.hide();
+    $.continueLabel.hide();
     __defers["$.__views.selectPhoto!click!selectPhoto"] && $.__views.selectPhoto.addEventListener("click", selectPhoto);
     __defers["$.__views.takePhoto!click!takePhoto"] && $.__views.takePhoto.addEventListener("click", takePhoto);
-    __defers["$.__views.continuar!click!goToNext"] && $.__views.continuar.addEventListener("click", goToNext);
-    __defers["$.__views.showButtons!click!showButtons"] && $.__views.showButtons.addEventListener("click", showButtons);
+    __defers["$.__views.continueLabel!click!goToNext"] && $.__views.continueLabel.addEventListener("click", goToNext);
     _.extend($, exports);
 }
 

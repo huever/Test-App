@@ -1,1 +1,1 @@
-/Users/gl/Documents/Titanium_Studio_Workspace/test/Resources/alloy/controllers/playController.js
+/Users/gl/Documents/Titanium_Studio_Workspace/Test-App/Resources/alloy/controllers/playController.js

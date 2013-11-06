@@ -1,7 +1,19 @@
 function Controller() {
     function goToNext() {
         var formController = Alloy.createController("formController");
-        formController.getView().open();
+        formController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
+    }
+    function playSound() {
+        file = args.file;
+        sound = Titanium.Media.createSound({
+            url: file
+        });
+        sound.addEventListener("complete", function() {
+            alert(L("endRecording"));
+        });
+        sound.play();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "playController";
@@ -13,57 +25,67 @@ function Controller() {
     var __defers = {};
     $.__views.playController = Ti.UI.createWindow({
         backgroundColor: "white",
+        backgroundImage: "/images/eq.png",
         layout: "vertical",
         id: "playController"
     });
     $.__views.playController && $.addTopLevelView($.__views.playController);
-    $.__views.__alloyId11 = Ti.UI.createLabel({
+    $.__views.playtitle = Ti.UI.createLabel({
         top: 25,
         color: "black",
-        text: "Reproducir",
-        id: "__alloyId11"
+        id: "playtitle"
     });
-    $.__views.playController.add($.__views.__alloyId11);
-    $.__views.topLabel = Ti.UI.createLabel({
-        top: 20,
-        text: "No estoy seguro que seas vos",
-        id: "topLabel"
+    $.__views.playController.add($.__views.playtitle);
+    $.__views.playLabel1 = Ti.UI.createLabel({
+        text: L("playLabel1"),
+        color: "white",
+        id: "playLabel1"
     });
-    $.__views.playController.add($.__views.topLabel);
-    $.__views.__alloyId12 = Ti.UI.createLabel({
-        text: "Dejame escuchar de nuevo",
-        id: "__alloyId12"
+    $.__views.playController.add($.__views.playLabel1);
+    $.__views.playLabel2 = Ti.UI.createLabel({
+        text: L("playLabel2"),
+        color: "white",
+        id: "playLabel2"
     });
-    $.__views.playController.add($.__views.__alloyId12);
-    $.__views.__alloyId13 = Ti.UI.createButton({
-        width: 40,
+    $.__views.playController.add($.__views.playLabel2);
+    $.__views.playButton = Ti.UI.createButton({
+        width: 80,
+        height: 80,
+        backgroundColor: "blue",
+        borderRadius: 40,
+        top: 30,
+        color: "white",
+        title: L("playButton"),
+        id: "playButton"
+    });
+    $.__views.playController.add($.__views.playButton);
+    playSound ? $.__views.playButton.addEventListener("click", playSound) : __defers["$.__views.playButton!click!playSound"] = true;
+    $.__views.playLabel3 = Ti.UI.createLabel({
+        text: L("playLabel3"),
+        color: "white",
+        id: "playLabel3"
+    });
+    $.__views.playController.add($.__views.playLabel3);
+    $.__views.continueLabel = Ti.UI.createButton({
+        width: 190,
         height: 40,
-        backgroundColor: "green",
-        borderRadius: 10,
-        id: "__alloyId13"
-    });
-    $.__views.playController.add($.__views.__alloyId13);
-    $.__views.__alloyId14 = Ti.UI.createLabel({
-        text: "Reproducir voz",
-        id: "__alloyId14"
-    });
-    $.__views.playController.add($.__views.__alloyId14);
-    $.__views.__alloyId15 = Ti.UI.createButton({
-        width: 200,
-        height: 35,
         backgroundColor: "#b0e88d",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
         color: "black",
-        title: "Continuar",
-        id: "__alloyId15"
+        title: L("continueLabel"),
+        id: "continueLabel"
     });
-    $.__views.playController.add($.__views.__alloyId15);
-    goToNext ? $.__views.__alloyId15.addEventListener("click", goToNext) : __defers["$.__views.__alloyId15!click!goToNext"] = true;
+    $.__views.playController.add($.__views.continueLabel);
+    goToNext ? $.__views.continueLabel.addEventListener("click", goToNext) : __defers["$.__views.continueLabel!click!goToNext"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId15!click!goToNext"] && $.__views.__alloyId15.addEventListener("click", goToNext);
+    var args = arguments[0];
+    var sound;
+    playSound();
+    __defers["$.__views.playButton!click!playSound"] && $.__views.playButton.addEventListener("click", playSound);
+    __defers["$.__views.continueLabel!click!goToNext"] && $.__views.continueLabel.addEventListener("click", goToNext);
     _.extend($, exports);
 }
 

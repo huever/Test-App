@@ -1,11 +1,10 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<Label class="title">Grabar</Label>
-		<Label id="topLabel">Cuando te vi estabas cantando</Label>
-		<Label>Puedo escuchar tu voz?</Label>
-		<Button class="record"></Button>
-		<Label>Grabar voz</Label>
-		
-		<Button class="button" onClick="goToNext">Continuar</Button>			
+		<Label class="title" id="recordTitle"></Label>
+		<Label id="recordLabel1"></Label>
+		<Label id="recordLabel2"></Label>
+		<Button class="record" id="recordButton" onClick="record"></Button>
+		<Button class="stop" id="stopButton" onClick="stopRecording"></Button>
+		<Label  id="recordLabel3"></Label>
 	</Window>
 </Alloy>

@@ -1,10 +1,10 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<Label class="title">Reproducir</Label>
-		<Label id="topLabel">No estoy seguro que seas vos</Label>
-		<Label>Dejame escuchar de nuevo</Label>
-		<Button class="play"></Button>
-		<Label>Reproducir voz</Label>
-		<Button class="button" onClick="goToNext">Continuar</Button>	
+		<Label class="title" id="playtitle"></Label>
+		<Label id="playLabel1"></Label>
+		<Label id="playLabel2"></Label>
+		<Button class="play" id="playButton" onClick="playSound"></Button>
+		<Label id="playLabel3"></Label>
+		<Button class="button" onClick="goToNext" id="continueLabel"></Button>	
 	</Window>
 </Alloy>

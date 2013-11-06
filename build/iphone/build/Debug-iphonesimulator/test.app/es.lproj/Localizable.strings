@@ -3,7 +3,34 @@
  * this is a generated file - DO NOT EDIT
  */
 
-"select_photo" = "Seleccionar otra foto";
-"take_other_photo" = "Tomar otra foto";
-"nice_picture" = "Que buena foto!";
-"continue" = "Continuar";
+"indexTitle" = "Inicio";
+"indexLabel1" = "Bienvenido a la aplicación de pruebas";
+"indexLabel2" = "Haga click en iniciar para comenzar";
+"continueLabel" = "Continuar";
+"photoTitle" = "Fotos";
+"photoLabel1" = "Utiliza la mejor foto que tengas!";
+"selectPhoto" = "Seleccionar de la Biblioteca";
+"takePhoto" = "Tomar foto";
+"selectOtherPhoto" = "Seleccionar otra foto";
+"takeOtherPhoto" = "Tomar otra foto";
+"nicePicture" = "Que buena foto!";
+"gpsTitle" = "GPS";
+"gpsLabel1" = "Me pareció verte por acá";
+"gpsLabel2" = "¿Estas en ciudad?";
+"gpsContinue" = "Ahí estoy!!!";
+"recordTitle" = "Grabar";
+"recordLabel1" = "Cuando te vi estabas cantando";
+"recordLabel2" = "Puedo escuchar tu voz?";
+"recordLabel3" = "Grabar voz";
+"recordButton" = "R";
+"playTitle" = "Reproducir";
+"playLabel1" = "No estoy seguro que seas vos";
+"playLabel2" = "Dejame escuchar de nuevo";
+"playLabel3" = "Reproducir voz";
+"playButton" = "P";
+"endRecording" = "Fin de la grabación";
+"formTitle" = "Formulario";
+"whatsYourName" = "Cual es tu nombre?";
+"validate" = "Validar";
+"validateError" = "Complete el campo";
+"endTitle" = "Welcome!!!!";

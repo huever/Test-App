@@ -3,7 +3,7 @@ function Controller() {
         $.recordButton.hide();
         $.recordButton.height = 0;
         $.stopButton.show();
-        $.stopButton.height = 80;
+        $.stopButton.height = 150;
         recording.start();
     }
     function stopRecording() {
@@ -14,9 +14,7 @@ function Controller() {
         var playController = Alloy.createController("playController", {
             file: file
         });
-        playController.getView().open({
-            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-        });
+        playController.getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "recordController";
@@ -35,7 +33,7 @@ function Controller() {
     $.__views.recordController && $.addTopLevelView($.__views.recordController);
     $.__views.recordTitle = Ti.UI.createLabel({
         top: 25,
-        color: "black",
+        color: "white",
         text: L("recordTitle"),
         id: "recordTitle"
     });
@@ -53,31 +51,22 @@ function Controller() {
     });
     $.__views.recordController.add($.__views.recordLabel2);
     $.__views.recordButton = Ti.UI.createButton({
-        width: 80,
-        height: 80,
-        backgroundColor: "red",
-        borderRadius: 40,
+        backgroundImage: "/images/record.png",
+        width: 150,
+        height: 150,
         top: 30,
         id: "recordButton"
     });
     $.__views.recordController.add($.__views.recordButton);
     record ? $.__views.recordButton.addEventListener("click", record) : __defers["$.__views.recordButton!click!record"] = true;
     $.__views.stopButton = Ti.UI.createButton({
-        width: 80,
-        height: 80,
-        backgroundColor: "red",
-        borderRadius: 0,
-        top: 30,
+        backgroundImage: "/images/stop.png",
+        width: 150,
+        height: 150,
         id: "stopButton"
     });
     $.__views.recordController.add($.__views.stopButton);
     stopRecording ? $.__views.stopButton.addEventListener("click", stopRecording) : __defers["$.__views.stopButton!click!stopRecording"] = true;
-    $.__views.recordLabel3 = Ti.UI.createLabel({
-        text: L("recordLabel3"),
-        color: "white",
-        id: "recordLabel3"
-    });
-    $.__views.recordController.add($.__views.recordLabel3);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var file;

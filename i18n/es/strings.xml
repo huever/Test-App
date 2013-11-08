@@ -17,6 +17,8 @@
 	<string name="gpsLabel1">Me pareció verte por acá</string>
 	<string name="gpsLabel2">¿Estas en ciudad?</string>
 	<string name="gpsContinue">Ahí estoy!!!</string>
+	<string name="latitude">Latitud</string>
+	<string name="longitude">Longitud</string>
 	
 	<string name="recordTitle">Grabar</string>
 	<string name="recordLabel1">Cuando te vi estabas cantando</string>
@@ -33,6 +35,7 @@
 	
 	<string name="formTitle">Formulario</string>
 	<string name="whatsYourName">Cual es tu nombre?</string>	
+	<string name="whatsYourNameValidation">Ingrese su nombre</string>
 	<string name="validate">Validar</string>
 	<string name="validateError">Complete el campo</string>	
 	

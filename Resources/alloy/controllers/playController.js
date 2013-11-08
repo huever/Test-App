@@ -1,9 +1,7 @@
 function Controller() {
     function goToNext() {
         var formController = Alloy.createController("formController");
-        formController.getView().open({
-            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-        });
+        formController.getView().open();
     }
     function playSound() {
         file = args.file;
@@ -49,27 +47,18 @@ function Controller() {
     });
     $.__views.playController.add($.__views.playLabel2);
     $.__views.playButton = Ti.UI.createButton({
-        width: 80,
-        height: 80,
-        backgroundColor: "blue",
-        borderRadius: 40,
+        backgroundImage: "/images/play.png",
+        width: 150,
+        height: 150,
         top: 30,
-        color: "white",
-        title: L("playButton"),
         id: "playButton"
     });
     $.__views.playController.add($.__views.playButton);
     playSound ? $.__views.playButton.addEventListener("click", playSound) : __defers["$.__views.playButton!click!playSound"] = true;
-    $.__views.playLabel3 = Ti.UI.createLabel({
-        text: L("playLabel3"),
-        color: "white",
-        id: "playLabel3"
-    });
-    $.__views.playController.add($.__views.playLabel3);
     $.__views.continueLabel = Ti.UI.createButton({
         width: 190,
         height: 40,
-        backgroundColor: "#b0e88d",
+        backgroundColor: "white",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,

@@ -39,7 +39,7 @@ function takePhoto() {
 }
 
 function goToNext() {
-	var gpsController = Alloy.createController('gpsController');
+	var gpsController = Alloy.createController('GpsController');
 	if (OS_IOS) {
 		gpsController.getView().open({
 			transition : Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT

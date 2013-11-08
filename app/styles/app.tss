@@ -5,7 +5,7 @@
 ".button":{
 	width: 190,
 	height: 40,
-	backgroundColor: "#b0e88d",
+	backgroundColor: "white",
 	borderRadius: 10,
 	borderColor: "#a5d686",
 	top: 10,
@@ -26,4 +26,8 @@
 	color:"#336699",
 	width:"250",
 	height:"35"
+}
+
+".error": {
+	color: "red"
 }

@@ -4,7 +4,7 @@ var sound;
 playSound();
 
 function goToNext(e) {
-	var formController = Alloy.createController('formController');
+	var formController = Alloy.createController('FormController');
 	if (OS_IOS) {
 		formController.getView().open({
 			transition : Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT

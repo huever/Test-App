@@ -1,9 +1,7 @@
 function Controller() {
     function goToNext() {
         var photoController = Alloy.createController("photoController");
-        photoController.getView().open({
-            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-        });
+        photoController.getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -40,7 +38,7 @@ function Controller() {
     $.__views.continueLabel = Ti.UI.createButton({
         width: 190,
         height: 40,
-        backgroundColor: "#b0e88d",
+        backgroundColor: "white",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,

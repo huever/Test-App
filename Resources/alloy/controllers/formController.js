@@ -1,6 +1,13 @@
 function Controller() {
     function validate() {
-        alert("Escribiste: " + $.textField.value);
+        if ("" == $.textField.value) $.whatsYourNameValidation.text = L("whatsYourNameValidation"); else {
+            $.whatsYourNameValidation.text = "";
+            goToNext();
+        }
+    }
+    function goToNext() {
+        var recordController = Alloy.createController("EndController");
+        recordController.getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "formController";
@@ -12,6 +19,7 @@ function Controller() {
     var __defers = {};
     $.__views.formController = Ti.UI.createWindow({
         backgroundColor: "white",
+        backgroundImage: "/images/form.png",
         layout: "vertical",
         id: "formController"
     });
@@ -36,10 +44,15 @@ function Controller() {
         id: "textField"
     });
     $.__views.formController.add($.__views.textField);
+    $.__views.whatsYourNameValidation = Ti.UI.createLabel({
+        color: "red",
+        id: "whatsYourNameValidation"
+    });
+    $.__views.formController.add($.__views.whatsYourNameValidation);
     $.__views.validate = Ti.UI.createButton({
         width: 190,
         height: 40,
-        backgroundColor: "#b0e88d",
+        backgroundColor: "white",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,

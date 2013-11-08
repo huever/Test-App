@@ -17,6 +17,8 @@
 	<string name="gpsLabel1">Are you from here?</string>
 	<string name="gpsLabel2">Are ou in this city?</string>
 	<string name="gpsContinue">I'm here!!!</string>
+	<string name="latitude">Latitude</string>
+	<string name="longitude">Longitude</string>
 	
 	<string name="recordTitle">Record</string>
 	<string name="recordLabel1">When I saw you, you were singing</string>
@@ -31,8 +33,9 @@
 	<string name="playButton">></string>	
 	<string name="endRecording">End of Recording</string>	
 	
-	<string name="formTitle">form</string>
+	<string name="formTitle">Form</string>
 	<string name="whatsYourName">What's your name?</string>	
+	<string name="whatsYourNameValidation">Enter your name</string>
 	<string name="validate">Validate</string>
 	<string name="validateError">Complete field</string>	
 	

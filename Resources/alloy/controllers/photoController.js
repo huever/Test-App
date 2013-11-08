@@ -23,9 +23,7 @@ function Controller() {
     }
     function goToNext() {
         var gpsController = Alloy.createController("gpsController");
-        gpsController.getView().open({
-            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-        });
+        gpsController.getView().open();
     }
     function showButtons() {
         $.selectPhoto.title = L("selectOtherPhoto");
@@ -52,14 +50,14 @@ function Controller() {
     $.__views.photoController && $.addTopLevelView($.__views.photoController);
     $.__views.photoTitle = Ti.UI.createLabel({
         top: 25,
-        color: "black",
+        color: "white",
         text: L("photoTitle"),
         id: "photoTitle"
     });
     $.__views.photoController.add($.__views.photoTitle);
     $.__views.photoLabel1 = Ti.UI.createLabel({
         text: L("photoLabel1"),
-        color: "White",
+        color: "white",
         id: "photoLabel1"
     });
     $.__views.photoController.add($.__views.photoLabel1);
@@ -71,7 +69,7 @@ function Controller() {
     $.__views.selectPhoto = Ti.UI.createButton({
         width: 190,
         height: 40,
-        backgroundColor: "#b0e88d",
+        backgroundColor: "white",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
@@ -84,7 +82,7 @@ function Controller() {
     $.__views.takePhoto = Ti.UI.createButton({
         width: 190,
         height: 40,
-        backgroundColor: "#b0e88d",
+        backgroundColor: "white",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,
@@ -97,7 +95,7 @@ function Controller() {
     $.__views.continueLabel = Ti.UI.createButton({
         width: 190,
         height: 40,
-        backgroundColor: "#b0e88d",
+        backgroundColor: "white",
         borderRadius: 10,
         borderColor: "#a5d686",
         top: 10,

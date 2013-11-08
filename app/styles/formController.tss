@@ -1,3 +1,6 @@
+".container": {
+	backgroundImage: "/images/form.png"
+}
 "#whatsYourName": {
 	text: L("whatsYourName")
 }

@@ -14,7 +14,7 @@ function record(e) {
 	$.recordButton.hide();
 	$.recordButton.height = 0;
 	$.stopButton.show();
-	$.stopButton.height = 80;
+	$.stopButton.height = 150;
 	recording.start();
 }
 
@@ -24,7 +24,7 @@ function stopRecording(e) {
 }
 
 function goToNext(file) {
-	var playController = Alloy.createController('playController', {
+	var playController = Alloy.createController('PlayController', {
 		file : file
 	});
 	if (OS_IOS) {

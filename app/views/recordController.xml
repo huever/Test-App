@@ -5,6 +5,5 @@
 		<Label id="recordLabel2"></Label>
 		<Button class="record" id="recordButton" onClick="record"></Button>
 		<Button class="stop" id="stopButton" onClick="stopRecording"></Button>
-		<Label  id="recordLabel3"></Label>
 	</Window>
 </Alloy>

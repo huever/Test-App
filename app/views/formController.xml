@@ -3,6 +3,7 @@
 		<Label class="title" id="formTitle"></Label>
 		<Label id="whatsYourName"></Label>		
 	    <TextField id="textField" />
+	    <Label class="error" id="whatsYourNameValidation"></Label>
 		<Button class="button" id="validate" onClick="validate"></Button>
 	</Window>
 </Alloy>

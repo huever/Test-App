@@ -2,23 +2,21 @@
 	backgroundImage: "/images/eq.png"
 }
 ".record": {
-	width: 80,
-	height: 80,
-	backgroundColor: "red",
-	borderRadius: 40,
+	backgroundImage: "/images/record.png",
+	width: 150,
+	height: 150,
 	top: 30
 }
 
 ".stop": {
-	width: 80,
-	height: 80,
-	backgroundColor: "red",
-	borderRadius: 0,
-	top: 30
+	backgroundImage: "/images/stop.png",
+	width: 150,
+	height: 150,
 }
 
 "#recordTitle": {
-	text: L("recordTitle")
+	text: L("recordTitle"),
+	color: "white"
 }
 "#recordLabel1": {
 	text: L("recordLabel1"),

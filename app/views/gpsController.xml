@@ -2,8 +2,10 @@
 	<Window class="container" layout="vertical">
 		<Label class="title" id="gpsTitle"></Label>
 		<Label id="gpsLabel1"></Label>
-		<Label id="gpsLabel2"></Label>				
-	
+		<Label id="gpsLabel2"></Label>	
+						
+		<Label id="locationLat"></Label>
+		<Label id="locationLong"></Label>	
 		<Button class="button" id="gpsContinue" onClick="goToNext"></Button>
 	</Window>
 </Alloy>

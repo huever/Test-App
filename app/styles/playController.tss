@@ -2,12 +2,10 @@
 	backgroundImage: "/images/eq.png"
 }
 ".play": {
-	width: 80,
-	height: 80,
-	backgroundColor: "blue",
-	borderRadius: 40,
-	top: 30,
-	color: "white",
+	backgroundImage: "/images/play.png",
+	width: 150,
+	height: 150,
+	top: 30
 }
 
 "#playTitle": {
@@ -25,9 +23,6 @@
 "#playLabel3": {
 	text: L("playLabel3"),
 	color: "white"
-}
-"#playButton": {
-	title: L("playButton")
 }
 "#continueLabel": {
 	title: L("continueLabel")

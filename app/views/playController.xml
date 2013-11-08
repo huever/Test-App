@@ -4,7 +4,6 @@
 		<Label id="playLabel1"></Label>
 		<Label id="playLabel2"></Label>
 		<Button class="play" id="playButton" onClick="playSound"></Button>
-		<Label id="playLabel3"></Label>
 		<Button class="button" onClick="goToNext" id="continueLabel"></Button>	
 	</Window>
 </Alloy>

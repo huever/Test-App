@@ -1,10 +1,12 @@
 function Controller() {
     function goToNext() {
-        var recordController = Alloy.createController("recordController");
-        recordController.getView().open();
+        var recordController = Alloy.createController("RecordController");
+        recordController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     function getPosition() {
-        Titanium.Geolocation.getCurrentPosition(function(e) {
+        Ti.Geolocation.getCurrentPosition(function(e) {
             if (!e.success || e.error) {
                 alert("error " + JSON.stringify(e.error));
                 return;
@@ -22,49 +24,49 @@ function Controller() {
         });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "gpsController";
+    this.__controllerPath = "GpsController";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.gpsController = Ti.UI.createWindow({
+    $.__views.GpsController = Ti.UI.createWindow({
         backgroundColor: "white",
-        backgroundImage: "/images/map.png",
         layout: "vertical",
-        id: "gpsController"
+        backgroundImage: "/images/map.png",
+        id: "GpsController"
     });
-    $.__views.gpsController && $.addTopLevelView($.__views.gpsController);
+    $.__views.GpsController && $.addTopLevelView($.__views.GpsController);
     $.__views.gpsTitle = Ti.UI.createLabel({
         color: "white",
         top: 25,
         text: L("gpsTitle"),
         id: "gpsTitle"
     });
-    $.__views.gpsController.add($.__views.gpsTitle);
+    $.__views.GpsController.add($.__views.gpsTitle);
     $.__views.gpsLabel1 = Ti.UI.createLabel({
         color: "white",
         text: L("gpsLabel1"),
         id: "gpsLabel1"
     });
-    $.__views.gpsController.add($.__views.gpsLabel1);
+    $.__views.GpsController.add($.__views.gpsLabel1);
     $.__views.gpsLabel2 = Ti.UI.createLabel({
         color: "white",
         text: L("gpsLabel2"),
         id: "gpsLabel2"
     });
-    $.__views.gpsController.add($.__views.gpsLabel2);
+    $.__views.GpsController.add($.__views.gpsLabel2);
     $.__views.locationLat = Ti.UI.createLabel({
         color: "white",
         id: "locationLat"
     });
-    $.__views.gpsController.add($.__views.locationLat);
+    $.__views.GpsController.add($.__views.locationLat);
     $.__views.locationLong = Ti.UI.createLabel({
         color: "white",
         id: "locationLong"
     });
-    $.__views.gpsController.add($.__views.locationLong);
+    $.__views.GpsController.add($.__views.locationLong);
     $.__views.gpsContinue = Ti.UI.createButton({
         width: 190,
         height: 40,
@@ -76,13 +78,16 @@ function Controller() {
         title: L("gpsContinue"),
         id: "gpsContinue"
     });
-    $.__views.gpsController.add($.__views.gpsContinue);
+    $.__views.GpsController.add($.__views.gpsContinue);
     goToNext ? $.__views.gpsContinue.addEventListener("click", goToNext) : __defers["$.__views.gpsContinue!click!goToNext"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     getPosition();
-    Titanium.Geolocation.accuracy = Titanium.Geolocation.NEAREST_TEN_METERS;
-    Titanium.Geolocation.addEventListener("location", getPosition);
+    Ti.Geolocation.accuracy = Titanium.Geolocation.NEAREST_TEN_METERS;
+    Ti.Geolocation.addEventListener("location", getPosition);
+    $.GpsController.addEventListener("close", function() {
+        Ti.Geolocation.removeEventListener("location", getPosition);
+    });
     __defers["$.__views.gpsContinue!click!goToNext"] && $.__views.gpsContinue.addEventListener("click", goToNext);
     _.extend($, exports);
 }

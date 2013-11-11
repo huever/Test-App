@@ -1,11 +1,8 @@
 <Alloy>
-	<Window class="container" layout="vertical">	
-			
+	<Window class="container">
 		<Label id="indexLabel1"></Label>
-		<Label id="indexLabel2"></Label>
-		
+		<Label id="indexLabel2"></Label>		
 		<ImageView id="imageView">			
-		<Button class="button" id="continueLabel" onClick="goToNext"></Button>	
-		
+		<Button class="button" id="continueLabel" onClick="goToNext"></Button>
 	</Window>
 </Alloy>

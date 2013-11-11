@@ -1,14 +1,10 @@
 <Alloy>
-	<Window class="container" layout="vertical">
-		
+	<Window class="container">		
 		<Label class="title" id="photoTitle"></Label>
-		<Label id="photoLabel1"></Label>
-					
-		<ImageView id="imageView">
-		
+		<Label id="photoLabel1"></Label>					
+		<ImageView id="imageView">		
 		<Button id="selectPhoto" class="button" onClick="selectPhoto"></Button>
-		<Button id="takePhoto" class="button" onClick="takePhoto"></Button>	
-		
+		<Button id="takePhoto" class="button" onClick="takePhoto"></Button>		
 		<Button id="continueLabel" class="button" onClick="goToNext"></Button>			
 	</Window>
 </Alloy>

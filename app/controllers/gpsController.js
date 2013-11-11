@@ -11,17 +11,15 @@ function goToNext() {
 	}
 }
 
-Titanium.Geolocation.accuracy = Titanium.Geolocation.NEAREST_TEN_METERS;
-		
+Ti.Geolocation.accuracy = Titanium.Geolocation.NEAREST_TEN_METERS;
+
 function getPosition() {
-	Titanium.Geolocation.getCurrentPosition(function(e)
-	{
-		if (!e.success || e.error)
-		{
+	Ti.Geolocation.getCurrentPosition(function(e) {
+		if (!e.success || e.error) {
 			alert('error ' + JSON.stringify(e.error));
 			return;
 		}
-		
+
 		var longitude = e.coords.longitude;
 		var latitude = e.coords.latitude;
 		var altitude = e.coords.altitude;
@@ -30,12 +28,15 @@ function getPosition() {
 		var speed = e.coords.speed;
 		var timestamp = e.coords.timestamp;
 		var altitudeAccuracy = e.coords.altitudeAccuracy;
-		
+
 		$.locationLat.text = L('longitude') + ': ' + longitude;
 		$.locationLong.text = L('latitude') + ': ' + latitude;
-		
-		
-	}); 	
-};	
+	});
+};
 
-Titanium.Geolocation.addEventListener('location', getPosition);
+Ti.Geolocation.addEventListener('location', getPosition);	
+
+$.GpsController.addEventListener('close', function(){
+	Ti.Geolocation.removeEventListener('location', getPosition);
+});
+

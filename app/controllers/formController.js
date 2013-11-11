@@ -1,5 +1,5 @@
 function validate() {
-	if($.textField.value == ""){
+	if ($.textField.value === "") {
 		$.whatsYourNameValidation.text = L('whatsYourNameValidation');
 	} else {
 		$.whatsYourNameValidation.text = '';

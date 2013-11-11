@@ -1,41 +1,43 @@
 function Controller() {
     function validate() {
-        if ("" == $.textField.value) $.whatsYourNameValidation.text = L("whatsYourNameValidation"); else {
+        if ("" === $.textField.value) $.whatsYourNameValidation.text = L("whatsYourNameValidation"); else {
             $.whatsYourNameValidation.text = "";
             goToNext();
         }
     }
     function goToNext() {
         var recordController = Alloy.createController("EndController");
-        recordController.getView().open();
+        recordController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "formController";
+    this.__controllerPath = "FormController";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.formController = Ti.UI.createWindow({
+    $.__views.FormController = Ti.UI.createWindow({
         backgroundColor: "white",
-        backgroundImage: "/images/form.png",
         layout: "vertical",
-        id: "formController"
+        backgroundImage: "/images/form.png",
+        id: "FormController"
     });
-    $.__views.formController && $.addTopLevelView($.__views.formController);
+    $.__views.FormController && $.addTopLevelView($.__views.FormController);
     $.__views.formTitle = Ti.UI.createLabel({
         top: 25,
         color: "black",
         text: L("formTitle"),
         id: "formTitle"
     });
-    $.__views.formController.add($.__views.formTitle);
+    $.__views.FormController.add($.__views.formTitle);
     $.__views.whatsYourName = Ti.UI.createLabel({
         text: L("whatsYourName"),
         id: "whatsYourName"
     });
-    $.__views.formController.add($.__views.whatsYourName);
+    $.__views.FormController.add($.__views.whatsYourName);
     $.__views.textField = Ti.UI.createTextField({
         borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
         color: "#336699",
@@ -43,12 +45,12 @@ function Controller() {
         height: "35",
         id: "textField"
     });
-    $.__views.formController.add($.__views.textField);
+    $.__views.FormController.add($.__views.textField);
     $.__views.whatsYourNameValidation = Ti.UI.createLabel({
         color: "red",
         id: "whatsYourNameValidation"
     });
-    $.__views.formController.add($.__views.whatsYourNameValidation);
+    $.__views.FormController.add($.__views.whatsYourNameValidation);
     $.__views.validate = Ti.UI.createButton({
         width: 190,
         height: 40,
@@ -60,7 +62,7 @@ function Controller() {
         title: L("validate"),
         id: "validate"
     });
-    $.__views.formController.add($.__views.validate);
+    $.__views.FormController.add($.__views.validate);
     validate ? $.__views.validate.addEventListener("click", validate) : __defers["$.__views.validate!click!validate"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);

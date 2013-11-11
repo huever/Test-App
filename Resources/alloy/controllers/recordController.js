@@ -11,45 +11,47 @@ function Controller() {
         goToNext(file);
     }
     function goToNext(file) {
-        var playController = Alloy.createController("playController", {
+        var playController = Alloy.createController("PlayController", {
             file: file
         });
-        playController.getView().open();
+        playController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "recordController";
+    this.__controllerPath = "RecordController";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.recordController = Ti.UI.createWindow({
+    $.__views.RecordController = Ti.UI.createWindow({
         backgroundColor: "white",
-        backgroundImage: "/images/eq.png",
         layout: "vertical",
-        id: "recordController"
+        backgroundImage: "/images/eq.png",
+        id: "RecordController"
     });
-    $.__views.recordController && $.addTopLevelView($.__views.recordController);
+    $.__views.RecordController && $.addTopLevelView($.__views.RecordController);
     $.__views.recordTitle = Ti.UI.createLabel({
         top: 25,
         color: "white",
         text: L("recordTitle"),
         id: "recordTitle"
     });
-    $.__views.recordController.add($.__views.recordTitle);
+    $.__views.RecordController.add($.__views.recordTitle);
     $.__views.recordLabel1 = Ti.UI.createLabel({
         text: L("recordLabel1"),
         color: "white",
         id: "recordLabel1"
     });
-    $.__views.recordController.add($.__views.recordLabel1);
+    $.__views.RecordController.add($.__views.recordLabel1);
     $.__views.recordLabel2 = Ti.UI.createLabel({
         text: L("recordLabel2"),
         color: "white",
         id: "recordLabel2"
     });
-    $.__views.recordController.add($.__views.recordLabel2);
+    $.__views.RecordController.add($.__views.recordLabel2);
     $.__views.recordButton = Ti.UI.createButton({
         backgroundImage: "/images/record.png",
         width: 150,
@@ -57,7 +59,7 @@ function Controller() {
         top: 30,
         id: "recordButton"
     });
-    $.__views.recordController.add($.__views.recordButton);
+    $.__views.RecordController.add($.__views.recordButton);
     record ? $.__views.recordButton.addEventListener("click", record) : __defers["$.__views.recordButton!click!record"] = true;
     $.__views.stopButton = Ti.UI.createButton({
         backgroundImage: "/images/stop.png",
@@ -65,7 +67,7 @@ function Controller() {
         height: 150,
         id: "stopButton"
     });
-    $.__views.recordController.add($.__views.stopButton);
+    $.__views.RecordController.add($.__views.stopButton);
     stopRecording ? $.__views.stopButton.addEventListener("click", stopRecording) : __defers["$.__views.stopButton!click!stopRecording"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);

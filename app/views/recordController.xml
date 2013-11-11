@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container">
 		<Label class="title" id="recordTitle"></Label>
 		<Label id="recordLabel1"></Label>
 		<Label id="recordLabel2"></Label>

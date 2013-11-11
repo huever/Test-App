@@ -12,11 +12,8 @@ function selectPhoto() {
 			}
 			showButtons();
 		},
-		cancel : function() {
-
-		},
-		error : function(error) {
-		}
+		cancel : function() {},
+		error : function(error) {}
 	});
 }
 
@@ -30,11 +27,8 @@ function takePhoto() {
 			}			
 			showButtons();
 		},
-		cancel : function() {
-
-		},
-		error : function(error) {
-		}
+		cancel : function() {},
+		error : function(error) {}
 	});
 }
 

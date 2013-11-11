@@ -1,5 +1,6 @@
 "Window": {
-	backgroundColor:"white"	
+	backgroundColor:"white",
+	layout: "vertical"
 }
 
 ".button":{
@@ -15,10 +16,6 @@
 ".title": {
 	top: 25,
 	color: "black"	
-}
-
-"#topLabel":{
-	top:20	
 }
 
 "TextField": {

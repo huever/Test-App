@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container">
 		<Label class="title" id="formTitle"></Label>
 		<Label id="whatsYourName"></Label>		
 	    <TextField id="textField" />

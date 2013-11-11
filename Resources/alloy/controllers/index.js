@@ -1,7 +1,9 @@
 function Controller() {
     function goToNext() {
-        var photoController = Alloy.createController("photoController");
-        photoController.getView().open();
+        var photoController = Alloy.createController("PhotoController");
+        photoController.getView().open({
+            transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+        });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -13,8 +15,8 @@ function Controller() {
     var __defers = {};
     $.__views.index = Ti.UI.createWindow({
         backgroundColor: "white",
-        backgroundImage: "/images/index.png",
         layout: "vertical",
+        backgroundImage: "/images/index.png",
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);

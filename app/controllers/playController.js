@@ -1,6 +1,4 @@
 var args = arguments[0];
-var sound;
-
 playSound();
 
 function goToNext(e) {
@@ -15,8 +13,9 @@ function goToNext(e) {
 }
 
 function playSound() {
-	file = args.file;
-	
+	var sound;
+	var file = args.file;
+
 	sound = Titanium.Media.createSound({
 		url : file
 	});

@@ -22,3 +22,6 @@
 "#continueLabel": {
 	title: L("continueLabel")
 }
+".hidden": {
+	height: 0
+}

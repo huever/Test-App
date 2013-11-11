@@ -34,9 +34,9 @@ function getPosition() {
 	});
 };
 
-Ti.Geolocation.addEventListener('location', getPosition);	
+Ti.Geolocation.addEventListener('location', getPosition);
 
-$.GpsController.addEventListener('close', function(){
+$.GpsController.addEventListener('close', function() {
 	Ti.Geolocation.removeEventListener('location', getPosition);
 });
 

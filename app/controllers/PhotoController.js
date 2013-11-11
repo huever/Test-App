@@ -1,6 +1,5 @@
-$.imageView.hide();
-$.imageView.height = 0;
 $.continueLabel.hide();
+$.addClass($.imageView, 'hidden');
 
 function selectPhoto() {
 	Titanium.Media.openPhotoGallery({
@@ -12,8 +11,10 @@ function selectPhoto() {
 			}
 			showButtons();
 		},
-		cancel : function() {},
-		error : function(error) {}
+		cancel : function() {
+		},
+		error : function(error) {
+		}
 	});
 }
 
@@ -24,11 +25,13 @@ function takePhoto() {
 
 			if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
 				$.imageView.image = image;
-			}			
+			}
 			showButtons();
 		},
-		cancel : function() {},
-		error : function(error) {}
+		cancel : function() {
+		},
+		error : function(error) {
+		}
 	});
 }
 
@@ -46,8 +49,7 @@ function goToNext() {
 function showButtons() {
 	$.selectPhoto.title = L("selectOtherPhoto");
 	$.takePhoto.title = L("takeOtherPhoto");
-	$.imageView.height = 200;
-	$.imageView.show();
+	$.removeClass($.imageView, 'hidden');
 	$.continueLabel.show();
 	$.photoLabel1.text = L("nicePicture");
 }

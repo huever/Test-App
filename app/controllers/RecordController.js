@@ -1,7 +1,4 @@
-var file;
-
-$.stopButton.hide();
-$.stopButton.height = 0;
+$.addClass($.stopButton, 'hidden');
 
 var currentSessionMode = Titanium.Media.audioSessionMode;
 Titanium.Media.audioSessionMode = Ti.Media.AUDIO_SESSION_MODE_PLAY_AND_RECORD;
@@ -11,19 +8,19 @@ recording.compression = Ti.Media.AUDIO_FORMAT_ULAW;
 recording.format = Ti.Media.AUDIO_FILEFORMAT_WAVE;
 
 function record(e) {
-	$.recordButton.hide();
-	$.recordButton.height = 0;
-	$.stopButton.show();
-	$.stopButton.height = 150;
+	$.addClass($.recordButton, 'hidden');
+	$.removeClass($.stopButton, 'hidden');
+	$.addClass($.stopButton, 'stop');
 	recording.start();
 }
 
 function stopRecording(e) {
-	file = recording.stop();
+	var file = recording.stop();
 	goToNext(file);
 }
 
-function goToNext(file) {
+function goToNext(fileToPlay) {
+	var file = fileToPlay;
 	var playController = Alloy.createController('PlayController', {
 		file : file
 	});

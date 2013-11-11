@@ -30,8 +30,7 @@ function Controller() {
     function showButtons() {
         $.selectPhoto.title = L("selectOtherPhoto");
         $.takePhoto.title = L("takeOtherPhoto");
-        $.imageView.height = 200;
-        $.imageView.show();
+        $.removeClass($.imageView, "hidden");
         $.continueLabel.show();
         $.photoLabel1.text = L("nicePicture");
     }
@@ -109,9 +108,8 @@ function Controller() {
     goToNext ? $.__views.continueLabel.addEventListener("click", goToNext) : __defers["$.__views.continueLabel!click!goToNext"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.imageView.hide();
-    $.imageView.height = 0;
     $.continueLabel.hide();
+    $.addClass($.imageView, "hidden");
     __defers["$.__views.selectPhoto!click!selectPhoto"] && $.__views.selectPhoto.addEventListener("click", selectPhoto);
     __defers["$.__views.takePhoto!click!takePhoto"] && $.__views.takePhoto.addEventListener("click", takePhoto);
     __defers["$.__views.continueLabel!click!goToNext"] && $.__views.continueLabel.addEventListener("click", goToNext);

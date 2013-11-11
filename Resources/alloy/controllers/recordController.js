@@ -1,16 +1,16 @@
 function Controller() {
     function record() {
-        $.recordButton.hide();
-        $.recordButton.height = 0;
-        $.stopButton.show();
-        $.stopButton.height = 150;
+        $.addClass($.recordButton, "hidden");
+        $.removeClass($.stopButton, "hidden");
+        $.addClass($.stopButton, "stop");
         recording.start();
     }
     function stopRecording() {
-        file = recording.stop();
+        var file = recording.stop();
         goToNext(file);
     }
-    function goToNext(file) {
+    function goToNext(fileToPlay) {
+        var file = fileToPlay;
         var playController = Alloy.createController("PlayController", {
             file: file
         });
@@ -71,9 +71,7 @@ function Controller() {
     stopRecording ? $.__views.stopButton.addEventListener("click", stopRecording) : __defers["$.__views.stopButton!click!stopRecording"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var file;
-    $.stopButton.hide();
-    $.stopButton.height = 0;
+    $.addClass($.stopButton, "hidden");
     Titanium.Media.audioSessionMode;
     Titanium.Media.audioSessionMode = Ti.Media.AUDIO_SESSION_MODE_PLAY_AND_RECORD;
     Titanium.Media.audioLineType = Ti.Media.AUDIO_SPEAKER;
